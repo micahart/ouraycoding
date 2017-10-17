@@ -1,0 +1,89 @@
+h1 {
+  color: #944dff;
+}
+
+.party {
+  font-weight: bolder;
+  color: blue;
+}
+
+
+.saybug {
+  text-decoration: overline;
+  color: white;
+}
+
+.table{
+  text-decoration: underline;
+}
+
+p {
+  background-color: black;
+  color: white;
+}
+
+.house .window{
+  color:purple
+}
+
+.house .door{
+  color: red
+}
+
+.house .window h1{
+  color: blue;
+}
+
+.house .door h1{
+  color: green;
+}
+
+
+.tree .leaf{
+  h1:
+}
+
+.picture-grid .row {
+    border: solid black 1px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.black{
+  color: black;
+}
+
+.white{
+  color:white;
+}
+
+.grey{
+  color:grey;
+}
+
+.brownred{
+  border: solid #4d0000 3px;
+}
+
+.brownyellow{
+  color:#663300
+}
+
+.browngreen{
+  color:#663300
+}
+
+.brownpurple{
+  color:#26004d
+}
+
+.brownblue{
+  color:#00004d
+}
+
+.brownorange{
+  color:#803300
+}
