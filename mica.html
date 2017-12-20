@@ -21,17 +21,19 @@
 
 <body style="background-color:#ffcccc">
 
-<h1>
-  <font style=color:#99ffdd;font_family:"Times New Roman">MICA IS AWESOME</font>
+<h1 id="mia" >
+  MICA IS AWESOME
 </h1>
 
 <p></p>
 
 <p>
 
-<u>
 
-<table style="font-family:Impact">
+<button id="hide">hide</button>
+<button id="show">show</button>
+
+<table id="hea" style="font-family:Impact">
   <tr>
 
     <td>
@@ -168,7 +170,7 @@ Hi this is mica and this should be black and white.
 </div>
 
 
-<div class="container">
+<div id="bigbigdiv" class="container">
   <div class="row">
     <div class="col-md-4 brownred">
       <img src="color fly.jpg" />
@@ -180,8 +182,8 @@ Hi this is mica and this should be black and white.
       <img src="color fly.jpg"/>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-4">
+  <div id="bigdiv"class="row">
+    <div id="litlediv"class="col-md-4">
       <img src="color fly.jpg"/>
     </div>
     <div class="col-md-4 center">
@@ -231,7 +233,52 @@ Hi this is mica and this should be black and white.
   Don't forget to eat your vegetables!
 </div>
 
+<h1 id="eia">
+  Ella is Awesome
+</h1>
+
+<script type="text/javascript">
+
+var miaElement = document.getElementById("mia");
+
+function moreAwesomer() {
+  miaElement.innerHTML += "Awesome"
+}
+
+miaElement.addEventListener("click", moreAwesomer);
+
+</script>
+
+<script type="text/javascript">
+
+var eiaElement = document.getElementById("eia");
+
+function moreAwesomer() {
+  eiaElement.innerHTML += "Awesome"
+}
+
+eiaElement.addEventListener("click", moreAwesomer);
+
+var tableToHide = document.getElementById("hea");
+var hideButton = document.getElementById("hide");
+
+function hideIt() {
+  tableToHide.style.visibility = "hidden";
+}
+
+hideButton.addEventListener("click", hideIt);
+
+var tableToShow = document.getElementById("hea")
+var showButton = document.getElementById("show")
+
+function showIt() {
+  tableToShow.style.visibility = "visible";
+}
+
+showButton.addEventListener("click", showIt)
+
+</script>
+
+
 </body>
-
-
 </html>
