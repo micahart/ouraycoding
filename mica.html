@@ -237,48 +237,29 @@ Hi this is mica and this should be black and white.
   Ella is Awesome
 </h1>
 
-<script type="text/javascript">
+<div id="calculator" class="container">
+  <div class="row">
+    <div id="screen" class="col-md-12">
 
-var miaElement = document.getElementById("mia");
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button id="b1">1</button>
+      <button id="b2">2</button>
+      <button id="b3">3</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button id="plus">+</button>
+      <button id="minus">-</button>
+      <button id="equals">=</button>
+    </div>
+  </div>
+</div>
 
-function moreAwesomer() {
-  miaElement.innerHTML += "Awesome"
-}
-
-miaElement.addEventListener("click", moreAwesomer);
-
-</script>
-
-<script type="text/javascript">
-
-var eiaElement = document.getElementById("eia");
-
-function moreAwesomer() {
-  eiaElement.innerHTML += "Awesome"
-}
-
-eiaElement.addEventListener("click", moreAwesomer);
-
-var tableToHide = document.getElementById("hea");
-var hideButton = document.getElementById("hide");
-
-function hideIt() {
-  tableToHide.style.visibility = "hidden";
-}
-
-hideButton.addEventListener("click", hideIt);
-
-var tableToShow = document.getElementById("hea")
-var showButton = document.getElementById("show")
-
-function showIt() {
-  tableToShow.style.visibility = "visible";
-}
-
-showButton.addEventListener("click", showIt)
-
-</script>
-
+<script type="text/javascript" src="javascript.js"></script>
 
 </body>
 </html>

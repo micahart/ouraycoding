@@ -69,21 +69,35 @@ img {
 }
 
 .brownyellow{
-  color:#663300
+  border: solid #663300 3px;
 }
 
 .browngreen{
-  color:#663300
+  border: solid #663300 3px;
 }
 
 .brownpurple{
-  color:#26004d
+  border: solid #26004d 3px;
 }
 
 .brownblue{
-  color:#00004d
+  border: solid #00004d 3px;
 }
 
 .brownorange{
-  color:#803300
+  border: solid #803300 3px;
+}
+
+.center {
+  text-align: center;
+}
+
+.littleguy {
+  height: 21px;
+  width: auto;
+}
+
+#mia {
+  color:#99ffdd;
+  font_family: 'Times New Roman';
 }
