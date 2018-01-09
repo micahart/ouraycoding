@@ -38,17 +38,13 @@ function updateScreen(num) {
   screen.innerHTML += num;
 }
 
-document.getElementById("b1").addEventListener("click", function() {
-  updateScreen(1);
-});
-
-document.getElementById("b2").addEventListener("click", function() {
-  updateScreen(2);
-});
-
-document.getElementById("b3").addEventListener("click", function() {
-  updateScreen(3);
-});
+var buttons = document.getElementsByClassName("digit");
+for (var i = 0; i < buttons.length; i = i + 1) {
+  var button = buttons[i];
+  button.addEventListener("click", function() {
+    updateScreen(this.innerHTML);
+  })
+}
 
 var firstNumber;
 var operation;
@@ -61,6 +57,14 @@ function sub(a, b){
   return a-b;
 }
 
+function times(a, b){
+  return a*b;
+}
+
+function divide(a, b){
+  return a/b;
+}
+
 document.getElementById("plus").addEventListener("click", function() {
   firstNumber = screen.innerHTML;
   screen.innerHTML = '';
@@ -71,6 +75,18 @@ document.getElementById("minus").addEventListener("click", function() {
   firstNumber = screen.innerHTML;
   screen.innerHTML = '';
   operation = sub;
+});
+
+document.getElementById("times").addEventListener("click", function() {
+  firstNumber = screen.innerHTML;
+  screen.innerHTML = '';
+  operation = times;
+});
+
+document.getElementById("divide").addEventListener("click", function() {
+  firstNumber = screen.innerHTML;
+  screen.innerHTML = '';
+  operation = divide;
 });
 
 document.getElementById("equals").addEventListener("click", function() {
