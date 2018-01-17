@@ -54,6 +54,7 @@ img {
 
 .black{
   color: black;
+
 }
 
 .white{
@@ -100,4 +101,9 @@ img {
 #mia {
   color:#99ffdd;
   font_family: 'Times New Roman';
+}
+
+.black {
+  border: solid black 5px;
+  height: 80px;
 }

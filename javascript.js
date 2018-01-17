@@ -39,12 +39,22 @@ function updateScreen(num) {
 }
 
 var buttons = document.getElementsByClassName("digit");
+
 for (var i = 0; i < buttons.length; i = i + 1) {
   var button = buttons[i];
   button.addEventListener("click", function() {
     updateScreen(this.innerHTML);
   })
 }
+
+
+  // buttons is an array: [button1, button2, button3, button4, ...]
+  // arrays can also just hold integers: [0, 456, 123, ...]
+  // buttons[0] => button1
+  // buttons[1] => button2
+  // ...
+
+  // var button = buttons[i] // ,<- this code assigns the button at index i to the "button" variable.
 
 var firstNumber;
 var operation;
@@ -95,3 +105,23 @@ document.getElementById("equals").addEventListener("click", function() {
   var result = operation(a, b);
   screen.innerHTML = result;
 });
+
+
+var divtoshow = document.getElementById("x");
+
+function showX() {
+  divtoshow.innerHTML = "x";
+}
+
+divtoshow.addEventListener("click", function () {
+    divtoshow.innerHTML = "x";
+})
+
+var tics = document.getElementsByClassName("tic")
+
+for (var i = 0; i < tics.length; i = i + 1) {
+  var tic = tics[i];
+  tic.addEventListener("click", function() {
+    console.log("hey" + )
+  })
+}
