@@ -117,11 +117,55 @@ divtoshow.addEventListener("click", function () {
     divtoshow.innerHTML = "x";
 })
 
+
+
 var tics = document.getElementsByClassName("tic")
+
+function checkIfWon(){
+  console.log('cat')
+}
 
 for (var i = 0; i < tics.length; i = i + 1) {
   var tic = tics[i];
   tic.addEventListener("click", function() {
-    console.log("hey" + )
-  })
+    clickNumber = clickNumber + 1;
+
+// 0 % 2 = 0
+// 1 % 2 = 1
+// 2 % 2 = 0
+// 3 % 2 = 1
+// 4 % 2 = 0
+
+    // var grid = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    // var grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    // to access 1, you would do grid[0][0]
+    // to access 8, you would do grid[2][1]
+    // to access 9, you would do grid[2][2]
+
+   var grid = [
+     ['', '', ''],
+     ['', '', ''],
+     ['', '', '']
+   ];
+
+   if (this.innerHTML != '') {
+      console.log(this.innerHTML);
+      return;
+    }
+
+    // click logic
+    if (clickNumber % 2 === 1) {
+      // click number is odd
+      this.innerHTML = 'O';
+    } else {
+      // click number is even
+      this.innerHTML = 'X';
+    }
+
+    checkIfWon()
+
+  });
 }
+
+var clickNumber = 0;
