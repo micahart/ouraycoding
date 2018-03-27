@@ -130,25 +130,24 @@ var grid = [
 
 
 var allWinningCoordinates = [
-  //TODO: FIX COORDINATES TO BE ROW, THEN COLUMN
-    [[0,0],[0,1],[0,2]], //left column
-    [[1,0],[1,1],[1,2]], //middle column
-    [[2,0],[2,1],[2,2]], //right column
-    [[0,0],[1,0],[2,0]], // top row
-    [[0,1],[1,1],[2,1]], //middle row
-    [[0,2],[1,2],[2,2]], //bottom row
+    [[0,0],[1,0],[2,0]], //left column
+    [[0,1],[1,1],[2,1]], //middle column
+    [[0,2],[1,2],[2,2]], //right column
+    [[0,0],[0,1],[0,2]], // top row
+    [[1,0],[1,1],[1,2]], //middle row
+    [[2,0],[2,1],[2,2]], //bottom row
     [[0,0],[1,1],[2,2]], //diagonal down to right
-    [[0,2],[1,1],[2,1]]  //diagonal up to right
+    [[0,2],[1,1],[2,0]]  //diagonal up to right
 ];
 
 function checkIfWon(move) {
 
-    var wonGame = false;
+    var winningCoordinates = null; // <-- start with no winning coordinates
 
     // loop over all possible wins
     for (var i = 0; i < allWinningCoordinates.length; i = i + 1) {
       var aWin = allWinningCoordinates[i]; //<-- single possible win to check
-      var wonThisWin = true;
+      var wonThisWin = true; //<--assume they won this way until we see otherwise
 
       // loop over all coordinates needed for the win to check
       for (var j = 0; j < aWin.length; j = j + 1) {
@@ -163,6 +162,7 @@ function checkIfWon(move) {
 
         //check if grid at the coordinates DOES NOT contain move
         if (gridValue !== move) {
+          // current turn doesn't have a move in that grid space needed for this win, so they did not win
           wonThisWin = false;
         }
       }
@@ -170,20 +170,26 @@ function checkIfWon(move) {
       // after checking all coordinates, if wonThisWin was never set to false,
       // then they have won the game
       if (wonThisWin === true) {
-          wonGame = true;
+          winningCoordinates = aWin;
       }
 
     }
 
-    return wonGame;
+    return winningCoordinates;
 };
 
 var clickNumber = 0;
+var gameOver = false;
 
 for (var i = 0; i < tics.length; i = i + 1) {
 
   var tic = tics[i];
   tic.addEventListener("click", function() {
+
+    if (gameOver === true) {
+      //no more moves allowed
+      return; //<--exits the function; no move code executed
+    }
 
     // when someone clicks a tic:
     //   find out the address in "grid" for that tic
@@ -250,10 +256,36 @@ for (var i = 0; i < tics.length; i = i + 1) {
 
         clickNumber = clickNumber + 1;
 
-        var wonGame = checkIfWon(move);
-        console.log('Did '+move+' win the game? '+wonGame);
+        var winningCoordinates = checkIfWon(move);
+        var isGameWon = winningCoordinates !== null;
+        console.log('Did '+move+' win the game? '+(isGameWon));
         //TODO: something more exciting if somebody wins
-    }
+
+        if (isGameWon === true){
+
+         gameOver = true;
+
+          winningCoordinates.forEach( function (coordinates) {
+             var row = coordinates[0];
+             var column = coordinates[1];
+
+            //0,0 -> 0
+            //1,0 -> 3
+            //2,2 -> 8
+
+            var ticIndex = row * 3 + column;
+
+            var winningTic = tics[ticIndex];
+
+            winningTic.style.backgroundColor = 'green';
+
+          });
+
+
+
+        }
+
+      }
 
   });
 }
