@@ -107,18 +107,6 @@ document.getElementById("equals").addEventListener("click", function() {
 });
 
 
-var divtoshow = document.getElementById("x");
-
-function showX() {
-  divtoshow.innerHTML = "x";
-}
-
-divtoshow.addEventListener("click", function () {
-    divtoshow.innerHTML = "x";
-})
-
-
-
 var tics = document.getElementsByClassName("tic")
 
 var grid = [
